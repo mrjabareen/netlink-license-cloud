@@ -9,8 +9,8 @@ import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Icons } from '@/components/icons'
-import { useAuth } from '@/hooks/useAuth'
-import { toast } from 'react-hot-toast'
+import { toast } from 'sonner'
+import { supabase } from '@/lib/supabase'
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -18,17 +18,19 @@ export default function LoginPage() {
   const [password, setPassword] = useState('')
   const [rememberMe, setRememberMe] = useState(false)
   const router = useRouter()
-  const { signIn } = useAuth()
 
   async function onSubmit(event: React.SyntheticEvent) {
     event.preventDefault()
     setIsLoading(true)
 
     try {
-      const { data, error } = await signIn(email, password)
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      })
 
       if (error) {
-        toast.error(error)
+        toast.error(error.message)
       } else {
         toast.success('تم تسجيل الدخول بنجاح')
         router.push('/dashboard')

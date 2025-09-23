@@ -87,11 +87,11 @@ export default function HomePage() {
                 <Button variant="ghost">Pricing</Button>
               </Link>
               <Link href="/auth/login">
-                <Button variant="outline">Sign In</Button>
+                <Button variant="outline">تسجيل الدخول</Button>
               </Link>
               <Link href="/auth/register">
                 <Button>
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                  البدء <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
