@@ -1,0 +1,30 @@
+version: '3.8'
+
+networks:
+  netlink:
+    driver: bridge
+
+services:
+  # Web Frontend  
+  web:
+    image: node:18-alpine
+    container_name: netlink_web
+    restart: unless-stopped
+    working_dir: /app
+    command: sh -c "
+      apk add --no-cache git &&
+      rm -rf /tmp/repo &&
+      git clone https://github.com/mrjabareen/netlink-license-cloud.git /tmp/repo &&
+      cp -r /tmp/repo/web/* /app/ &&
+      npm install &&
+      npm run dev"
+    environment:
+      NODE_ENV: development
+      NEXT_PUBLIC_SUPABASE_URL: http://192.168.99.3:8000
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE
+      NEXT_PUBLIC_APP_URL: http://localhost:3001
+    ports:
+      - "3001:3000"
+    networks:
+      - netlink
+
