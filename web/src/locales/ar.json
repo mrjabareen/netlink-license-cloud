@@ -1,0 +1,36 @@
+{
+  "app.title": "منصة نت لينك للتراخيص السحابية",
+  "auth.login.title": "تسجيل الدخول",
+  "auth.login.subtitle": "أدخل بريدك الإلكتروني وكلمة المرور",
+  "auth.login.email": "البريد الإلكتروني",
+  "auth.login.password": "كلمة المرور",
+  "auth.login.remember": "تذكرني",
+  "auth.login.submit": "دخول",
+  "auth.login.forgot": "نسيت كلمة المرور؟",
+  "auth.login.noAccount": "ليس لديك حساب؟",
+  "auth.login.register": "إنشاء حساب",
+  "auth.login.error": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+  "auth.login.success": "تم تسجيل الدخول بنجاح",
+
+  "auth.register.title": "إنشاء حساب",
+  "auth.register.subtitle": "أدخل بياناتك لإنشاء حساب جديد",
+  "auth.register.firstName": "الاسم الأول",
+  "auth.register.lastName": "اسم العائلة",
+  "auth.register.email": "البريد الإلكتروني",
+  "auth.register.password": "كلمة المرور",
+  "auth.register.confirmPassword": "تأكيد كلمة المرور",
+  "auth.register.agree": "أوافق على ",
+  "auth.register.terms": "الشروط والأحكام",
+  "auth.register.submit": "إنشاء الحساب",
+  "auth.register.haveAccount": "لديك حساب بالفعل؟",
+  "auth.register.signin": "تسجيل الدخول",
+
+  "common.logout": "تسجيل الخروج",
+  "common.language": "اللغة",
+  "common.english": "الإنجليزية",
+  "common.arabic": "العربية",
+  "common.error": "حدث خطأ ما",
+
+  "dashboard.title": "لوحة التحكم",
+  "dashboard.welcome": "مرحباً بعودتك! هذا ما يحدث في تراخيصك اليوم."
+}
